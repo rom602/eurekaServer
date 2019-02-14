@@ -1,4 +1,4 @@
-package com.wari.springMSA;
+package com.wari.eurekaServer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

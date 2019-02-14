@@ -1,4 +1,4 @@
-package com.wari.springMSA;
+package com.wari.eurekaServer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
