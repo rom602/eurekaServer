@@ -1,13 +1,16 @@
 server:
-    port: ${PORT:8761}
+  port: 8761
+
 eureka:
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}
   server:
     enable-self-preservation: false
-    eviction-interval-timer-in-ms: 3000
-    response-cache-update-interval-ms: 3000
 
 spring:
   security:
