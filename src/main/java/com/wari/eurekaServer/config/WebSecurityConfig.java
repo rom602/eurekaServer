@@ -1,4 +1,4 @@
-package com.wari.eurekaServer;
+package com.wari.eurekaServer.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,7 +12,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         http.csrf()
                 .disable()
                 .authorizeRequests()
-                .anyRequest().authenticated()
+                .anyRequest().anonymous()
                 .and()
                 .httpBasic();
     }
