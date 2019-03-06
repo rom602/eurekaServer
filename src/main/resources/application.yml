@@ -30,4 +30,7 @@ spring:
   data:
     rest:
       base-path: /api
+  test:
+    database:
+      replace: none
 user-service.host: ${USER_SERVICE_HOST:localhost:8761}
