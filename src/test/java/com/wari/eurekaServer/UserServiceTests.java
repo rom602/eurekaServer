@@ -30,26 +30,11 @@ public class UserServiceTests {
     @Autowired
     private MockRestServiceServer server;
 
-    /*@Test
-    public void getAuthenticatedUserShouldReturnUser() {
-        // RestTemplate 가 특정 URL 로 요청을 보낸 후 그 URL 로부터 받아오는 반환값을 스텁한다.
-        this.server.expect(requestTo(String.format("http://%s/uaa/v1/me", serviceHost)))
-                .andRespond(withSuccess(new ClassPathResource("user.json", getClass()),
-                        MediaType.APPLICATION_JSON));
-
-        User user = userService.getAuthenticatedUser();
-
-        assertThat(user.getUsername()).isEqualTo("user");
-        assertThat(user.getFirstName()).isEqualTo("Jhon");
-        assertThat(user.getLastName()).isEqualTo("Doe");
-        assertThat(user.getCreatedAt()).isEqualTo(12345);
-        assertThat(user.getLastModified()).isEqualTo(12346);
-        assertThat(user.getId()).isEqualTo(0L);
-    }*/
-
     @Test
     public void getAuthenticatedUserShouldReturnUser() {
         // RestTemplate 가 특정 URL 로 요청을 보낸 후 그 URL 로부터 받아오는 반환값을 스텁한다.
+        // new ClassPathResource("user.json") -> user.json
+        // new ClassPathResource("user.json", getClass()) -> 현재 클래스 파일 패키지/user.json
         this.server.expect(
                 requestTo(String.format("http://%s/uaa/v1/me", serviceHost))).andRespond(
                 withSuccess(new ClassPathResource("user.json", getClass()),
