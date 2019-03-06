@@ -1,5 +1,6 @@
 package com.wari.eurekaServer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @GetMapping(value = "/accounts")
+    @RequestMapping(value = "/accounts")
     public ResponseEntity getUserAccount() throws Exception {
         return Optional.ofNullable(accountService.getUserAccounts())
                 .map(a -> new ResponseEntity<List<Account>>(a, HttpStatus.OK))

@@ -39,7 +39,7 @@ public class UserTests {
                 "  \"lastName\": \"Frost\",\n" +
                 "  \"email\": \"jfrost@example.com\",\n" +
                 "  \"createdAt\": 12345,\n" +
-                "  \"lastModified\": 123456,\n" +
+                "  \"lastModified\": 12346,\n" +
                 "  \"id\": 0\n" +
                 "}";
         /*assertThat(this.json.parse(content))

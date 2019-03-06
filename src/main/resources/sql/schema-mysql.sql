@@ -72,3 +72,15 @@ CREATE TABLE account_credit_cards
   CONSTRAINT FK_lb5lhjdqfk50esr5g5733ppdo FOREIGN KEY (account_id) REFERENCES account (id)
 );
 CREATE UNIQUE INDEX UK_b0tk2gq9bk6cggk5c4d33g3y4 ON account_credit_cards (credit_cards_id);
+
+DROP TABLE IF EXISTS user;
+CREATE TABLE user
+(
+  id            BIGINT(20) PRIMARY KEY NOT NULL,
+  created_at    BIGINT(40),
+  last_modified BIGINT(40),
+  email         VARCHAR(255),
+  first_name    VARCHAR(255),
+  last_name     VARCHAR(255),
+  username      VARCHAR(255)
+);
